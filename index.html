@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FADE</title>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.0.0/dist/model-viewer.min.js"></script>
+<style>
+  body { margin: 0; padding: 24px 16px; background: #1d1d1f; color: #f5f5f7; font: 15px/1.5 -apple-system, BlinkMacSystemFont, sans-serif; }
+  main { max-width: 960px; margin: 0 auto; }
+  .fade-3d { width: 100%; height: min(70vh, 560px); background-color: #3a3a3d; --poster-color: #3a3a3d; border-radius: 8px; }
+  @media (pointer: coarse) { .fade-3d { height: min(60vh, 560px); height: min(60svh, 560px); } }
+  .fade-3d::part(default-progress-bar) { display: none; }
+</style>
+</head>
+<body>
+<main>
+  <h1>FADE</h1>
+  <model-viewer id="fade-3d" class="fade-3d"
+    alt="FADE, a motorised one-fader DAW controller with a knob and a lit key, in black powder coat"
+    loading="lazy" reveal="auto"
+    camera-controls disable-pan touch-action="none"
+    orientation="0deg 0deg 180deg" camera-orbit="132deg 60deg auto" min-camera-orbit="auto 5deg 0.18m" max-camera-orbit="auto 170deg auto"
+    auto-rotate auto-rotate-delay="3000" rotation-per-second="12deg" interaction-prompt="auto"
+    environment-image="neutral" exposure="1" shadow-intensity="1" shadow-softness="0.8"
+    ar ar-modes="webxr scene-viewer quick-look" ar-scale="fixed" ar-placement="floor">
+  </model-viewer>
+</main>
+<script>
+  (function () {
+    var BASE = '';
+    var mv = document.getElementById('fade-3d');
+    mv.setAttribute('poster', BASE + 'FadeProduct-poster.jpg');
+    mv.setAttribute('ios-src', BASE + 'FadeProduct-web.usdz');
+    mv.setAttribute('src', BASE + 'FadeProduct-web.glb');
+  })();
+</script>
+</body>
+</html>
